@@ -13,13 +13,37 @@ package com.frc3322;
  * the wiring easier and significantly reduces the number of magic numbers
  * floating around.
  */
-public class RobotMap 
-{
+public class RobotMap {
+
     public class CAN{
         public static final int LEFT_FRONT_MOTOR = 1;
         public static final int LEFT_BACK_MOTOR = 2;
         public static final int RIGHT_FRONT_MOTOR = 3;
         public static final int RIGHT_BACK_MOTOR = 4;
+    }
+
+    public static class XBOX{
+
+        public static final int CONTROlLER = 0;
+
+        // Buttons
+        public static final int BUTTON_A = 1;
+        public static final int BUTTON_B = 2;
+        public static final int BUTTON_X = 3;
+        public static final int BUTTON_Y = 4;
+//        public static final int BUMPER_RIGHT = 6;
+//        public static final int BUMPER_LEFT = 5;
+//        public static final int BUTTON_BACK = 7;
+//        public static final int BUTTON_START = 8;
+        public static final int STICK_LEFT = 9;
+        public static final int STICK_RIGHT = 10;
+
+        // Axes
+        public static final int STICK_L_X_AXIS = 0;
+        public static final int STICK_L_Y_AXIS = 1;
+        public static final int STICK_R_X_AXIS = 4;
+        public static final int STICK_R_Y_AXIS = 5;
+
     }
 
     // For example to map the left and right motors, you could define the

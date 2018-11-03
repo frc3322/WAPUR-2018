@@ -20,14 +20,14 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 public class OI {
 
 
-    public Joystick stick = new Joystick(0);
+    public Joystick stick = new Joystick(RobotMap.XBOX.CONTROlLER);
 
-    JoystickButton button_a = new JoystickButton(stick, 1);
-    JoystickButton button_b = new JoystickButton(stick, 2);
-    JoystickButton button_x = new JoystickButton(stick, 3);
-    JoystickButton button_y = new JoystickButton(stick, 4);
-    Button stick_left = new JoystickButton(stick, 9);
-    Button stick_right = new JoystickButton(stick, 10);
+    private JoystickButton button_a = new JoystickButton(stick, RobotMap.XBOX.BUTTON_A);
+    private JoystickButton button_b = new JoystickButton(stick, RobotMap.XBOX.BUTTON_B);
+    private JoystickButton button_x = new JoystickButton(stick, RobotMap.XBOX.BUTTON_X);
+    private JoystickButton button_y = new JoystickButton(stick, RobotMap.XBOX.BUTTON_Y);
+    private Button stick_left = new JoystickButton(stick, 9);
+    private Button stick_right = new JoystickButton(stick, 10);
 
     public OI(){
 
