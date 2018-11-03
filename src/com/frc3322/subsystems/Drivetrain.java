@@ -7,8 +7,11 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.drive.MecanumDrive;
 
 public class Drivetrain extends Subsystem {
+
+    private MecanumDrive robotDrive;
 
 
     /*
@@ -29,9 +32,10 @@ public class Drivetrain extends Subsystem {
             WPI_TalonSRX rightFrontMotor = new WPI_TalonSRX(RobotMap.CAN.RIGHT_FRONT_MOTOR);
         Joystick driveStick = new Joystick(1);
 
-        public void teleopPeriodic()
-        {
-            robotDrive.mecanumDrive_Cartesian(driveStick.getX(), driveStick.getY(), driveStick.getZ());
+
+        public void initDefaultCommand(){
+            setDefaultCommand();
+            }
         }
 
 

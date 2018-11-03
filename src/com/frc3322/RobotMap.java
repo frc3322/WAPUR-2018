@@ -16,10 +16,10 @@ package com.frc3322;
 public class RobotMap 
 {
     public class CAN{
-        public static final int frontLeft = 1;
-        public static final int rearLeft = 2;
-        public static final int frontRight = 3;
-        public static final int rearRight = 4;
+        public static final int LEFT_FRONT_MOTOR = 1;
+        public static final int LEFT_BACK_MOTOR = 2;
+        public static final int RIGHT_FRONT_MOTOR = 3;
+        public static final int RIGHT_BACK_MOTOR = 4;
     }
 
     // For example to map the left and right motors, you could define the
