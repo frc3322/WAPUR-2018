@@ -7,12 +7,34 @@
 
 package com.frc3322;
 
+
+import edu.wpi.first.wpilibj.GenericHID;
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
-public class OI 
-{
+public class OI {
+
+
+    public Joystick stick = new Joystick(0);
+
+    JoystickButton button_a = new JoystickButton(stick, 1);
+    JoystickButton button_b = new JoystickButton(stick, 2);
+    JoystickButton button_x = new JoystickButton(stick, 3);
+    JoystickButton button_y = new JoystickButton(stick, 4);
+    Button stick_left = new JoystickButton(stick, 9);
+    Button stick_right = new JoystickButton(stick, 10);
+
+    public OI(){
+
+        //button_a.whenPressed(doSomething);
+
+    }
+
     // CREATING BUTTONS
     // One type of button is a joystick button which is any button on a
     // joystick.
