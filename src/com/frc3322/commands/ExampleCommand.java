@@ -13,12 +13,13 @@ import com.frc3322.Robot;
 /**
  * An example command.  You can replace me with your own command.
  */
-public class ExampleCommand extends Command 
-{
-    public ExampleCommand() 
-    {
+public class ExampleCommand extends Command {
+
+    public ExampleCommand() {
+
         // Use requires() here to declare subsystem dependencies
         requires(Robot.exampleSubsystem);
+
     }
 
     /**
@@ -26,8 +27,7 @@ public class ExampleCommand extends Command
      * this Command is run after being started.
      */
     @Override
-    protected void initialize()
-    {
+    protected void initialize() {
         
     }
 
@@ -37,8 +37,7 @@ public class ExampleCommand extends Command
      * scheduled to run until this Command either finishes or is canceled.
      */
     @Override
-    protected void execute()
-    {
+    protected void execute() {
         
     }
 
@@ -62,8 +61,8 @@ public class ExampleCommand extends Command
      * @see Command#isTimedOut() isTimedOut()
      */
     @Override
-    protected boolean isFinished()
-    {
+    protected boolean isFinished() {
+
         // TODO: Make this return true when this Command no longer needs to run execute()
         return false;
     }
@@ -76,8 +75,7 @@ public class ExampleCommand extends Command
      * command.
      */
     @Override
-    protected void end()
-    {
+    protected void end() {
             
     }
 
@@ -97,8 +95,9 @@ public class ExampleCommand extends Command
      * </p>
      */
     @Override
-    protected void interrupted()
-    {
+    protected void interrupted() {
+
         super.interrupted();
+
     }
 }
