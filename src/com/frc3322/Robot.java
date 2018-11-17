@@ -7,6 +7,7 @@
 
 package com.frc3322;
 
+import com.frc3322.subsystems.Drivetrain;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -25,7 +26,7 @@ import com.frc3322.subsystems.ExampleSubsystem;
 // If you rename or move this class, update the build.properties file in the project root
 public class Robot extends TimedRobot {
 
-    public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
+    public static final Drivetrain drivetrain = new Drivetrain();
     public static OI oi;
 
     private Command autonomousCommand;
@@ -119,9 +120,10 @@ public class Robot extends TimedRobot {
      * This function is called periodically during operator control.
      */
     @Override
-    public void teleopPeriodic() 
-    {
+    public void teleopPeriodic() {
+
         Scheduler.getInstance().run();
+
     }
 
     /**

@@ -5,13 +5,13 @@ import edu.wpi.first.wpilibj.command.Command;
 
 import static com.frc3322.Robot.drivetrain;
 
-public class DriveCommand extends Command{
+public class DriveControl extends Command{
 
     private final int HORIZONTAL_AXIS;
     private final int VERTICAL_AXIS;
     private final int ROTATION_AXIS;
 
-    public DriveCommand(){
+    public DriveControl(){
 
         requires(drivetrain);
 
