@@ -3,6 +3,7 @@ import com.ctre.CANTalon;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.frc3322.RobotMap;
+import com.frc3322.commands.DriveControl;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.TimedRobot;
@@ -30,13 +31,17 @@ public class Drivetrain extends Subsystem {
             WPI_TalonSRX leftFrontMotor = new WPI_TalonSRX(RobotMap.CAN.LEFT_FRONT_MOTOR);
             WPI_TalonSRX rightBackMotor = new WPI_TalonSRX(RobotMap.CAN.RIGHT_BACK_MOTOR);
             WPI_TalonSRX rightFrontMotor = new WPI_TalonSRX(RobotMap.CAN.RIGHT_FRONT_MOTOR);
-        Joystick driveStick = new Joystick(1);
-
-
-        public void initDefaultCommand(){
-            setDefaultCommand();
-            }
+            Joystick driveStick = new Joystick(1);
+            robotDrive = new MecanumDrive(leftFrontMotor, leftBackMotor, rightFrontMotor, rightBackMotor);
         }
+
+
+    @Override
+    protected void initDefaultCommand(){
+        setDefaultCommand(new DriveControl());
+            }
+
+
 
 
 }
