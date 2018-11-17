@@ -29,7 +29,7 @@ public class DriveControl extends Command{
         double verticalInput = -oi.stick.getRawAxis(VERTICAL_AXIS);
         double rotationInput = oi.stick.getRawAxis(ROTATION_AXIS);
 
-//        drivetrain.drive(horizontalInput, verticalInput, rotationInput);
+        drivetrain.drive(horizontalInput, verticalInput, rotationInput);
 
     }
 

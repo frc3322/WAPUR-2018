@@ -41,6 +41,10 @@ public class Drivetrain extends Subsystem {
         setDefaultCommand(new DriveControl());
             }
 
+    public void drive(double horizontalInput, double verticalInput, double rotationInput) {
+            robotDrive.driveCartesian(verticalInput, horizontalInput, rotationInput);
+        }
+
 
 
 
