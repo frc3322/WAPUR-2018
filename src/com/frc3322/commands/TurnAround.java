@@ -18,15 +18,11 @@ public class TurnAround extends Command {
 
     @Override
     protected void execute() {
-
+        drivetrain.drive(0, 0, -1);
     }
-
-
-
-
 
     @Override
     protected boolean isFinished() {
-        return false;
+        return Math.abs(targetAngle - drivetrain.navx.getAngle()) < 3 || isTimedOut();
     }
 }
