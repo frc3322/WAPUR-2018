@@ -8,6 +8,7 @@
 package com.frc3322;
 
 
+import com.frc3322.commands.TurnAround;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -33,7 +34,7 @@ public class OI {
 
     public OI(){
 
-        //button_a.whenPressed(doSomething);
+        button_a.whenPressed(new TurnAround());
 
     }
 
