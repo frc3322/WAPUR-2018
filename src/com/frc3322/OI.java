@@ -26,6 +26,8 @@ public class OI {
     private JoystickButton button_b = new JoystickButton(stick, RobotMap.XBOX.BUTTON_B);
     private JoystickButton button_x = new JoystickButton(stick, RobotMap.XBOX.BUTTON_X);
     private JoystickButton button_y = new JoystickButton(stick, RobotMap.XBOX.BUTTON_Y);
+    private JoystickButton bumper_r = new JoystickButton(stick, RobotMap.XBOX.BUMPER_RIGHT);
+    private JoystickButton bumper_l = new JoystickButton(stick, RobotMap.XBOX.BUMPER_LEFT);
     private Button stick_left = new JoystickButton(stick, 9);
     private Button stick_right = new JoystickButton(stick, 10);
 

@@ -8,18 +8,29 @@
 package com.frc3322.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 
-/**
- * An example subsystem.  You can replace me with your own Subsystem.
- */
-public class ExampleSubsystem extends Subsystem 
+
+public class Flipper extends Subsystem
 {
-    // Put methods for controlling this subsystem
-    // here. Call these from Commands.
+    DoubleSolenoid flipperSolenoid = new DoubleSolenoid(2,3);
+
+    public void flip() {
+        flipperSolenoid.set(DoubleSolenoid.Value.kForward);
+    }
+
+    public void unflip() {
+        flipperSolenoid.set(DoubleSolenoid.Value.kReverse);
+    }
+
+    public void idkflip() {
+        flipperSolenoid.set(DoubleSolenoid.Value.kOff);
+    }
 
     public void initDefaultCommand() 
     {
-        // TODO: Set the default command for a subsystem here. Example:
-        //    setDefaultCommand(new MySpecialCommand());
+
+
+
     }
 }
