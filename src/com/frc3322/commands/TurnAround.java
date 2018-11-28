@@ -12,7 +12,7 @@ public class TurnAround extends Command {
 
         requires(drivetrain);
 
-        initAngle = drivetrain.navx.getAngle();
+        initAngle = drivetrain.navx.getYaw();
         targetAngle = initAngle + 360;
     }
 
