@@ -27,6 +27,7 @@ public class Robot extends TimedRobot {
 
     public static final Drivetrain drivetrain = new Drivetrain();
     public static final Blocker blocker = new Blocker();
+    public static final Flipper flipper = new Flipper();
     public static OI oi;
 
     private Command autonomousCommand;

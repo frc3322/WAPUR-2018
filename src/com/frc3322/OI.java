@@ -8,6 +8,9 @@
 package com.frc3322;
 
 
+import com.frc3322.commands.BlockerDown;
+import com.frc3322.commands.BlockerUp;
+import com.frc3322.commands.Flip;
 import com.frc3322.commands.TurnAround;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
@@ -35,6 +38,9 @@ public class OI {
     public OI(){
 
         button_a.whenPressed(new TurnAround());
+
+        bumper_l.whenPressed(new BlockerUp());
+        bumper_r.whenPressed(new Flip());
 
     }
 
