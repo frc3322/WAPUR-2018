@@ -16,8 +16,8 @@ public class DriveControl extends Command{
 
         requires(drivetrain);
 
-        HORIZONTAL_AXIS = RobotMap.XBOX.STICK_L_X_AXIS;
-        VERTICAL_AXIS = RobotMap.XBOX.STICK_L_Y_AXIS;
+        HORIZONTAL_AXIS = RobotMap.XBOX.STICK_L_Y_AXIS;
+        VERTICAL_AXIS = RobotMap.XBOX.STICK_L_X_AXIS;
         ROTATION_AXIS = RobotMap.XBOX.STICK_R_X_AXIS;
 
     }
