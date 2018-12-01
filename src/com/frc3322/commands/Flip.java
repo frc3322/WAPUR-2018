@@ -3,7 +3,6 @@ package com.frc3322.commands;
 import com.frc3322.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
-import static com.frc3322.Robot.blocker;
 import static com.frc3322.Robot.flipper;
 
 public class Flip extends Command {

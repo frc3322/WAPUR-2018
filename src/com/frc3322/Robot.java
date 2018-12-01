@@ -13,7 +13,6 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import com.frc3322.commands.DriveControl;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -26,7 +25,7 @@ import com.frc3322.commands.DriveControl;
 public class Robot extends TimedRobot {
 
     public static final Drivetrain drivetrain = new Drivetrain();
-    public static final Blocker blocker = new Blocker();
+    public static final Flopper flopper = new Flopper();
     public static final Flipper flipper = new Flipper();
     public static OI oi;
 

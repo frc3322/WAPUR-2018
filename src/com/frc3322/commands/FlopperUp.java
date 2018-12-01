@@ -4,13 +4,13 @@ import com.frc3322.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 import static com.frc3322.Robot.*;
 
-public class BlockerUp extends Command {
+public class FlopperUp extends Command {
 
-    static boolean isBlockerUp = true;
+    static boolean isFlopperUp = true;
 
-    public BlockerUp(){
-        requires(blocker);
-        isBlockerUp = !isBlockerUp;
+    public FlopperUp(){
+        requires(flopper);
+        isFlopperUp = !isFlopperUp;
     }
 
     @Override
@@ -20,10 +20,10 @@ public class BlockerUp extends Command {
 
     @Override
     protected void initialize() {
-     if (isBlockerUp) {
-         Robot.blocker.blockerDown();
+     if (isFlopperUp) {
+         Robot.flopper.flopperDown();
      }else {
-         Robot.blocker.blockerUp();
+         Robot.flopper.flopperUp();
      }
     }
 }
