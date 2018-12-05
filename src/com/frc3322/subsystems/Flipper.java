@@ -10,7 +10,8 @@ package com.frc3322.subsystems;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 
-
+//This is the flipper subsystem, which is near the chassis.
+//It exists to block incoming balls from under the net.
 public class Flipper extends Subsystem
 {
     DoubleSolenoid flipperSolenoid = new DoubleSolenoid(2,3);
