@@ -8,7 +8,7 @@
 package com.frc3322;
 
 
-import com.frc3322.commands.FlopperUp;
+import com.frc3322.commands.Flop;
 import com.frc3322.commands.Flip;
 import com.frc3322.commands.TurnAround;
 import edu.wpi.first.wpilibj.Joystick;
@@ -37,7 +37,7 @@ public class OI {
 
         button_a.whenPressed(new TurnAround());
 
-        bumper_l.whenPressed(new FlopperUp());
+        bumper_l.whenPressed(new Flop());
         bumper_r.whenPressed(new Flip());
 
     }
