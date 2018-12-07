@@ -47,7 +47,7 @@ public class DriveControl extends Command{
     @Override
     protected boolean isFinished() {
         return false;
-    }
+    }//done!
 
     @Override
     protected void end() {drivetrain.drive(0, 0, 0);}
