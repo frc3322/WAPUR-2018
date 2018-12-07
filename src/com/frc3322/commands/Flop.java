@@ -4,11 +4,12 @@ import com.frc3322.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 import static com.frc3322.Robot.*;
 
-public class FlopperUp extends Command {
+public class Flop extends Command {
 
     static boolean isFlopperUp = true;
 
-    public FlopperUp(){
+    //Changes state of Flopper
+    public Flop(){
         requires(flopper);
         isFlopperUp = !isFlopperUp;
     }
@@ -18,11 +19,12 @@ public class FlopperUp extends Command {
         return false;
     }
 
+    //If the flopper is up, put it down, if it's down, put it up.
     @Override
     protected void initialize() {
      if (isFlopperUp) {
          Robot.flopper.flopperDown();
-     }else {
+     } else {
          Robot.flopper.flopperUp();
      }
     }
