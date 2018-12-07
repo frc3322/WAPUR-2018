@@ -18,7 +18,6 @@ public class Drivetrain extends Subsystem {
     public AHRS navx;
 
 
-
     /*
      * Simplest program to drive a robot with mecanum drive using a single Logitech
      * Extreme 3D Pro joystick and 4 drive motors connected as follows:
