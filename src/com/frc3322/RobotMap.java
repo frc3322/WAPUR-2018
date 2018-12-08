@@ -22,6 +22,14 @@ public class RobotMap {
         public static final int RIGHT_BACK_MOTOR = 3;
     }
 
+    public class PCM{
+        public static final int FLIPPER_OUT = 0;
+        public static final int FLIPPER_IN = 1;
+        public static final int FLOPPER_OUT = 2;
+        public static final int FLOPPER_IN = 3;
+
+    }
+
     public static class XBOX{
 
         public static final int CONTROlLER = 0;

@@ -7,20 +7,13 @@
 
 package com.frc3322;
 
-
-import com.frc3322.commands.Align;
-import edu.wpi.cscore.UsbCamera;
-import org.opencv.core.Rect;
-import org.opencv.imgproc.Imgproc;
+import com.frc3322.commands.Auton.Auton;
 import com.frc3322.subsystems.*;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj.CameraServer;
-import edu.wpi.first.wpilibj.vision.VisionRunner;
-import edu.wpi.first.wpilibj.vision.VisionThread;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -35,19 +28,10 @@ public class Robot extends TimedRobot {
     public static final Drivetrain drivetrain = new Drivetrain();
     public static final Flopper flopper = new Flopper();
     public static final Flipper flipper = new Flipper();
-    public static final Align align = new Align();
     public static OI oi;
 
     private Command autonomousCommand;
     private SendableChooser<Command> chooser = new SendableChooser<>();
-
-    public static final int IMG_WIDTH = 320;
-    public static final int IMG_HEIGHT = 240;
-
-    public  VisionThread visionThread;
-    public double centerX = 0.0;
-
-    public final Object imgLock = new Object();
 
     /**
      * This function is run when the robot is first started up and should be
@@ -60,23 +44,7 @@ public class Robot extends TimedRobot {
         //chooser.addDefault("Default Auto", new ExampleCommand());
         // chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
-
-        UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
-        camera.setResolution(IMG_WIDTH, IMG_HEIGHT);
-
-        visionThread = new VisionThread(camera, new GripPipeline(), pipeline -> {
-            if (!pipeline.findContoursOutput().isEmpty()) {
-                Rect r = Imgproc.boundingRect(pipeline.findContoursOutput().get(0));
-                synchronized (imgLock) {
-                    centerX = r.x + (r.width / 2);
-                }
-            }
-        });
-        visionThread.start();
-
     }
-
-
 
     /**
      * This function is called once each time the robot enters Disabled mode.
@@ -108,7 +76,7 @@ public class Robot extends TimedRobot {
     @Override
     public void autonomousInit() {
 
-        autonomousCommand = chooser.getSelected();
+        autonomousCommand = new Auton();
 
         /*
          * String autoSelected = SmartDashboard.getString("Auto Selector",
