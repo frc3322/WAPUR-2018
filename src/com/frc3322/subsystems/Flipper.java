@@ -13,26 +13,33 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 
 //This is the flipper subsystem, which is near the chassis.
 //It exists to block incoming balls from under the net.
-public class Flipper extends Subsystem
-{
+public class Flipper extends Subsystem {
+    boolean isFlipped;
     DoubleSolenoid flipperSolenoid = new DoubleSolenoid(RobotMap.PCM.FLIPPER_OUT,RobotMap.PCM.FLIPPER_IN);
 
-    public void flip() {
+    public void flip(){
+        if(isFlipped){
+            unflip();
+        }else{
+            extendFlip();
+        }
+    }
+
+    public void extendFlip() {
         flipperSolenoid.set(DoubleSolenoid.Value.kForward);
+        isFlipped = true;
     }
 
     public void unflip() {
         flipperSolenoid.set(DoubleSolenoid.Value.kReverse);
+        isFlipped = false;
     }
 
     public void idkflip() {
         flipperSolenoid.set(DoubleSolenoid.Value.kOff);
     }
 
-    public void initDefaultCommand() 
-    {
-
-
-
+    public void initDefaultCommand() {
+        unflip();
     }
 }
