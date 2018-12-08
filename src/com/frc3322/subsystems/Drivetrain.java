@@ -49,8 +49,9 @@ public class Drivetrain extends Subsystem {
     public void drive(double horizontalInput, double verticalInput, double rotationInput) {
             robotDrive.driveCartesian(verticalInput, horizontalInput, rotationInput);
         }
-
-
+    public void stop() {
+            robotDrive.driveCartesian(0,0,0);
+        }
 
 
 }

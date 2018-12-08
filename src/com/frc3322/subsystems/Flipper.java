@@ -7,6 +7,7 @@
 
 package com.frc3322.subsystems;
 
+import com.frc3322.RobotMap;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 
@@ -14,7 +15,7 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 //It exists to block incoming balls from under the net.
 public class Flipper extends Subsystem
 {
-    DoubleSolenoid flipperSolenoid = new DoubleSolenoid(2,3);
+    DoubleSolenoid flipperSolenoid = new DoubleSolenoid(RobotMap.PCM.FLIPPER_OUT,RobotMap.PCM.FLIPPER_IN);
 
     public void flip() {
         flipperSolenoid.set(DoubleSolenoid.Value.kForward);

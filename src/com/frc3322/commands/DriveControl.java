@@ -16,8 +16,8 @@ public class DriveControl extends Command{
 
         requires(drivetrain);
 
-        HORIZONTAL_AXIS = RobotMap.XBOX.STICK_L_Y_AXIS;
-        VERTICAL_AXIS = RobotMap.XBOX.STICK_L_X_AXIS;
+        HORIZONTAL_AXIS = RobotMap.XBOX.STICK_L_X_AXIS;
+        VERTICAL_AXIS = RobotMap.XBOX.STICK_L_Y_AXIS;
         ROTATION_AXIS = RobotMap.XBOX.STICK_R_X_AXIS;
 
     }
@@ -26,7 +26,7 @@ public class DriveControl extends Command{
     protected void execute() {
 
         double horizontalInput = oi.stick.getRawAxis(HORIZONTAL_AXIS);
-        double verticalInput = oi.stick.getRawAxis(VERTICAL_AXIS);
+        double verticalInput = -oi.stick.getRawAxis(VERTICAL_AXIS);
         double rotationInput = -oi.stick.getRawAxis(ROTATION_AXIS);
         if(Math.abs(oi.stick.getRawAxis(HORIZONTAL_AXIS)) < .1){
             horizontalInput = 0;
