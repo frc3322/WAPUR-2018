@@ -7,6 +7,7 @@
 
 package com.frc3322;
 
+import com.frc3322.commands.Auton.Auton;
 import com.frc3322.subsystems.*;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -75,7 +76,7 @@ public class Robot extends TimedRobot {
     @Override
     public void autonomousInit() {
 
-        autonomousCommand = chooser.getSelected();
+        autonomousCommand = new Auton();
 
         /*
          * String autoSelected = SmartDashboard.getString("Auto Selector",

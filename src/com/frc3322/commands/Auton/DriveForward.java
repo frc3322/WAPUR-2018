@@ -9,9 +9,8 @@ import static com.frc3322.Robot.drivetrain;
 
 public class DriveForward extends TimedCommand {
 
-    public DriveForward(String name, double timeout) {
-        super(name, timeout);
-        setTimeout(3);
+    public DriveForward( double timeout) {
+        super(timeout);
         requires(drivetrain);
     }
 
