@@ -25,6 +25,6 @@ public class Flopper extends Subsystem{
 
     @Override
     protected void initDefaultCommand() {
-
+        flopperDown();
     }
 }
