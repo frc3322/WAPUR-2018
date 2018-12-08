@@ -11,7 +11,6 @@ public class Flop extends Command {
     //Changes state of Flopper
     public Flop(){
         requires(flopper);
-        isFlopperUp = !isFlopperUp;
     }
 
     @Override
@@ -22,10 +21,6 @@ public class Flop extends Command {
     //If the flopper is up, put it down, if it's down, put it up.
     @Override
     protected void initialize() {
-     if (isFlopperUp) {
-         Robot.flopper.flopperDown();
-     } else {
-         Robot.flopper.flopperUp();
-     }
+        Robot.flopper.flop();
     }
 }
