@@ -18,28 +18,30 @@ public class Flipper extends Subsystem {
     DoubleSolenoid flipperSolenoid = new DoubleSolenoid(RobotMap.PCM.FLIPPER_OUT,RobotMap.PCM.FLIPPER_IN);
 
     public void flip(){
-        if(isFlipped){
-            unflip();
+        if(isFlipped()){
+            flipperIn();
         }else{
-            extendFlip();
+            flipperOut();
         }
     }
 
-    public void extendFlip() {
+    public void flipperOut() {
         flipperSolenoid.set(DoubleSolenoid.Value.kForward);
-        isFlipped = true;
     }
 
-    public void unflip() {
+    public void flipperIn() {
         flipperSolenoid.set(DoubleSolenoid.Value.kReverse);
-        isFlipped = false;
     }
 
     public void idkflip() {
         flipperSolenoid.set(DoubleSolenoid.Value.kOff);
     }
 
+    public boolean isFlipped() {
+        return flipperSolenoid.get() == DoubleSolenoid.Value.kForward;
+    }
+
     public void initDefaultCommand() {
-        unflip();
+        flipperIn();
     }
 }

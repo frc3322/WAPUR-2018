@@ -8,12 +8,11 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 
 //this is the flopper subsystem (AKA blocker).
 //It is placed on top of the robot and is designed to block incoming balls from above
-public class Flopper extends Subsystem{
-    boolean isFlopped;
+public class Flopper extends Subsystem {
     DoubleSolenoid flopperSolenoid = new DoubleSolenoid(RobotMap.PCM.FLOPPER_OUT,RobotMap.PCM.FLOPPER_IN);
 
     public void flop(){
-        if(isFlopped){
+        if(isFlopped()){
             flopperDown();
         }else{
             flopperUp();
@@ -22,17 +21,21 @@ public class Flopper extends Subsystem{
 
     public void flopperUp() {
         flopperSolenoid.set(DoubleSolenoid.Value.kForward);
-        isFlopped = true;
     }
 
     public void flopperDown() {
         flopperSolenoid.set(DoubleSolenoid.Value.kReverse);
-        isFlopped = false;
     }
 
     public void flopperOff() {
         flopperSolenoid.set(DoubleSolenoid.Value.kOff);
     }
+
+    public boolean isFlopped() {
+        return flopperSolenoid.get() == DoubleSolenoid.Value.kForward;
+    }
+
+
 
     @Override
     protected void initDefaultCommand() {
