@@ -15,7 +15,7 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 //It exists to block incoming balls from under the net.
 public class Flipper extends Subsystem {
     boolean isFlipped;
-    DoubleSolenoid flipperSolenoid = new DoubleSolenoid(RobotMap.PCM.FLIPPER_OUT,RobotMap.PCM.FLIPPER_IN);
+    DoubleSolenoid flipperSolenoid = new DoubleSolenoid(RobotMap.PCM.FLIPPER_OUT, RobotMap.PCM.FLIPPER_IN);
 
     public void flip(){
         if(isFlipped()){

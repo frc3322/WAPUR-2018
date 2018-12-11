@@ -115,6 +115,8 @@ public class Robot extends TimedRobot {
             autonomousCommand.cancel();
 
         }
+        flopper.flopperDown();
+        flipper.unflip();
     }
 
     /**

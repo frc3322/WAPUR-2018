@@ -105,7 +105,6 @@ public class GripPipeline implements VisionPipeline {
 	 * @param red The min and max red.
 	 * @param green The min and max green.
 	 * @param blue The min and max blue.
-	 * @param output The image in which to store the output.
 	 */
 	private void rgbThreshold(Mat input, double[] red, double[] green, double[] blue,
 		Mat out) {
