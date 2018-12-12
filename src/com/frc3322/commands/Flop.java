@@ -6,7 +6,6 @@ import static com.frc3322.Robot.*;
 
 public class Flop extends Command {
 
-    static boolean isFlopperUp = true;
 
     //Changes state of Flopper
     public Flop(){
@@ -15,7 +14,7 @@ public class Flop extends Command {
 
     @Override
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     //If the flopper is up, put it down, if it's down, put it up.

@@ -14,7 +14,7 @@ public class Flip extends Command {
 
     @Override
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     @Override
