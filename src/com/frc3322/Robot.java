@@ -116,7 +116,7 @@ public class Robot extends TimedRobot {
 
         }
         flopper.flopperDown();
-        flipper.unflip();
+        flipper.flipperIn();
     }
 
     /**
