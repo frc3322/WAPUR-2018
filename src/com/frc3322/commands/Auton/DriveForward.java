@@ -15,8 +15,8 @@ public class DriveForward extends TimedCommand {
     }
 
     @Override
-    protected void initialize() {
-        drivetrain.drive(0, .5, 0);
+    protected void execute() {
+        drivetrain.drive(-.7, 0, 0);
     }
     protected void end() {
         drivetrain.stop();

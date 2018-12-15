@@ -77,6 +77,8 @@ public class Robot extends TimedRobot {
     public void autonomousInit() {
 
         autonomousCommand = new Auton();
+        Robot.flopper.flopperUp();
+        Robot.flipper.flipperIn();
 
         /*
          * String autoSelected = SmartDashboard.getString("Auto Selector",
