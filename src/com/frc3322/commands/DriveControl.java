@@ -23,24 +23,16 @@ public class DriveControl extends Command{
 
     }
 
-
     @Override
     protected void execute() {
 
         double verticalInput = oi.stick.getRawAxis(VERTICAL_AXIS);
         double horizontalInput = -oi.stick.getRawAxis(HORIZONTAL_AXIS);
         double rotationInput = -oi.stick.getRawAxis(ROTATION_AXIS);
-        if(Math.abs(oi.stick.getRawAxis(HORIZONTAL_AXIS)) < .1){
-            horizontalInput = 0;
-        }
 
-        if(Math.abs(oi.stick.getRawAxis(VERTICAL_AXIS)) < .1){
-            verticalInput = 0;
-        }
-
-        if(Math.abs(oi.stick.getRawAxis(ROTATION_AXIS)) < .1){
-            rotationInput = 0;
-        }
+        verticalInput = (Math.abs(verticalInput) < .1) ? 0 : verticalInput;
+        horizontalInput = (Math.abs(horizontalInput) < .1) ? 0 : horizontalInput;
+        rotationInput = (Math.abs(rotationInput) < .1) ? 0 : rotationInput;
 
         drivetrain.drive(verticalInput, horizontalInput, rotationInput);
 
@@ -52,5 +44,7 @@ public class DriveControl extends Command{
     }
 
     @Override
-    protected void end() {drivetrain.drive(0, 0, 0);}
+    protected void end() {
+        drivetrain.drive(0, 0, 0);
+    }
 }
