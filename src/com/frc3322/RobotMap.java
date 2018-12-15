@@ -32,7 +32,8 @@ public class RobotMap {
 
     public static class XBOX{
 
-        public static final int CONTROlLER = 0;
+        public static final int CONTROlLER_0 = 0;
+        public static final int CONTROLLER_1 = 1;
 
         // Buttons
         public static final int BUTTON_A = 1;

@@ -22,16 +22,17 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 public class OI {
 
 
-    public Joystick stick = new Joystick(RobotMap.XBOX.CONTROlLER);
+    public Joystick chassisStick = new Joystick(RobotMap.XBOX.CONTROlLER_0);
+    public Joystick flipFlopStick = new Joystick(RobotMap.XBOX.CONTROLLER_1);
 
-    private JoystickButton button_a = new JoystickButton(stick, RobotMap.XBOX.BUTTON_A);
-    private JoystickButton button_b = new JoystickButton(stick, RobotMap.XBOX.BUTTON_B);
-    private JoystickButton button_x = new JoystickButton(stick, RobotMap.XBOX.BUTTON_X);
-    private JoystickButton button_y = new JoystickButton(stick, RobotMap.XBOX.BUTTON_Y);
-    private JoystickButton bumper_r = new JoystickButton(stick, RobotMap.XBOX.BUMPER_RIGHT);
-    private JoystickButton bumper_l = new JoystickButton(stick, RobotMap.XBOX.BUMPER_LEFT);
-    private Button stick_left = new JoystickButton(stick, 9);
-    private Button stick_right = new JoystickButton(stick, 10);
+    private JoystickButton button_a = new JoystickButton(chassisStick, RobotMap.XBOX.BUTTON_A);
+    private JoystickButton button_b = new JoystickButton(chassisStick, RobotMap.XBOX.BUTTON_B);
+    private JoystickButton button_x = new JoystickButton(chassisStick, RobotMap.XBOX.BUTTON_X);
+    private JoystickButton button_y = new JoystickButton(chassisStick, RobotMap.XBOX.BUTTON_Y);
+    private JoystickButton bumper_r = new JoystickButton(flipFlopStick, RobotMap.XBOX.BUMPER_RIGHT);
+    private JoystickButton bumper_l = new JoystickButton(flipFlopStick, RobotMap.XBOX.BUMPER_LEFT);
+    private Button stick_left = new JoystickButton(chassisStick, 9);
+    private Button stick_right = new JoystickButton(chassisStick, 10);
 
     public OI(){
 

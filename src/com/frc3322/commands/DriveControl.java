@@ -26,9 +26,9 @@ public class DriveControl extends Command{
     @Override
     protected void execute() {
 
-        double verticalInput = oi.stick.getRawAxis(VERTICAL_AXIS);
-        double horizontalInput = -oi.stick.getRawAxis(HORIZONTAL_AXIS);
-        double rotationInput = -oi.stick.getRawAxis(ROTATION_AXIS);
+        double verticalInput = oi.chassisStick.getRawAxis(VERTICAL_AXIS);
+        double horizontalInput = -oi.chassisStick.getRawAxis(HORIZONTAL_AXIS);
+        double rotationInput = -oi.chassisStick.getRawAxis(ROTATION_AXIS);
 
         verticalInput = (Math.abs(verticalInput) < .1) ? 0 : verticalInput;
         horizontalInput = (Math.abs(horizontalInput) < .1) ? 0 : horizontalInput;
