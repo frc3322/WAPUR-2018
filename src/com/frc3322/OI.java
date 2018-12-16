@@ -31,6 +31,8 @@ public class OI {
     private JoystickButton button_y = new JoystickButton(chassisStick, RobotMap.XBOX.BUTTON_Y);
     private JoystickButton bumper_r = new JoystickButton(flipFlopStick, RobotMap.XBOX.BUMPER_RIGHT);
     private JoystickButton bumper_l = new JoystickButton(flipFlopStick, RobotMap.XBOX.BUMPER_LEFT);
+    private JoystickButton chassisBumper_l = new JoystickButton(chassisStick, RobotMap.XBOX.BUMPER_LEFT);
+    private JoystickButton chassisBumper_r = new JoystickButton(chassisStick, RobotMap.XBOX.BUMPER_RIGHT);
     private Button stick_left = new JoystickButton(chassisStick, 9);
     private Button stick_right = new JoystickButton(chassisStick, 10);
 
@@ -39,7 +41,9 @@ public class OI {
         button_a.whenPressed(new TurnAround());
 
         bumper_l.whenPressed(new Flop());
+        chassisBumper_l.whenPressed(new Flop());
         bumper_r.whenPressed(new Flip());
+        chassisBumper_r.whenPressed(new Flip());
 
     }
 

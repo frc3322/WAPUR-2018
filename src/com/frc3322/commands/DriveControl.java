@@ -28,13 +28,13 @@ public class DriveControl extends Command{
 
         double verticalInput = oi.chassisStick.getRawAxis(VERTICAL_AXIS);
         double horizontalInput = -oi.chassisStick.getRawAxis(HORIZONTAL_AXIS);
-        double rotationInput = -oi.chassisStick.getRawAxis(ROTATION_AXIS);
+        double rotationInput = .5 * -oi.chassisStick.getRawAxis(ROTATION_AXIS);
 
         verticalInput = (Math.abs(verticalInput) < .1) ? 0 : verticalInput;
         horizontalInput = (Math.abs(horizontalInput) < .1) ? 0 : horizontalInput;
         rotationInput = (Math.abs(rotationInput) < .1) ? 0 : rotationInput;
 
-        drivetrain.drive(verticalInput, horizontalInput, rotationInput);
+        drivetrain.drive(horizontalInput, verticalInput, rotationInput);
 
     }
 
