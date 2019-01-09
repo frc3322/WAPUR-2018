@@ -1,10 +1,8 @@
 package com.frc3322.subsystems;
-import com.ctre.CANTalon;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.frc3322.RobotMap;
 import com.frc3322.commands.DriveControl;
-import com.kauailabs.navx.frc.AHRS;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.SPI;
@@ -16,7 +14,7 @@ import com.frc3322.Robot.*;
 public class Drivetrain extends Subsystem {
 
     private MecanumDrive robotDrive;
-    public AHRS navx;
+
 
 
 
@@ -36,7 +34,6 @@ public class Drivetrain extends Subsystem {
             WPI_TalonSRX leftFrontMotor = new WPI_TalonSRX(RobotMap.CAN.LEFT_FRONT_MOTOR);
             WPI_TalonSRX rightBackMotor = new WPI_TalonSRX(RobotMap.CAN.RIGHT_BACK_MOTOR);
             WPI_TalonSRX rightFrontMotor = new WPI_TalonSRX(RobotMap.CAN.RIGHT_FRONT_MOTOR);
-            navx = new AHRS(SPI.Port.kMXP);
             Joystick driveStick = new Joystick(1);
             robotDrive = new MecanumDrive(leftFrontMotor, leftBackMotor, rightFrontMotor, rightBackMotor);
         }

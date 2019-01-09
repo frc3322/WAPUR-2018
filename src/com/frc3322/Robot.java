@@ -15,6 +15,13 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.CameraServer;
+import edu.wpi.first.wpilibj.vision.VisionRunner;
+import edu.wpi.first.wpilibj.vision.VisionThread;
+import edu.wpi.first.wpilibj.vision.VisionPipeline;
+import edu.wpi.cscore.UsbCamera;
+import com.frc3322.GripPipeline;
+import org.opencv.core.Rect;
+import org.opencv.imgproc.Imgproc;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -25,6 +32,14 @@ import edu.wpi.first.wpilibj.CameraServer;
  */
 // If you rename or move this class, update the build.properties file in the project root
 public class Robot extends TimedRobot {
+
+    private static final int IMG_WIDTH = 320;
+    private static final int IMG_HEIGHT = 240;
+
+    private VisionThread visionThread;
+    private double centerX = 0.0;
+
+    private final Object imgLock = new Object();
 
     public static final Drivetrain drivetrain = new Drivetrain();
     public static final Flopper flopper = new Flopper();
@@ -41,11 +56,26 @@ public class Robot extends TimedRobot {
     @Override
     public void robotInit() {
 
+        UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
+
         oi = new OI();
         //chooser.addDefault("Default Auto", new ExampleCommand());
         // chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
         CameraServer.getInstance().startAutomaticCapture();
+        CameraServer.getInstance().getVideo();
+
+        camera.setResolution(IMG_WIDTH, IMG_HEIGHT);
+
+        visionThread = new VisionThread(camera, new GripPipeline(), pipeline -> {
+            if (!pipeline.findContoursOutput().isEmpty()) {
+                Rect r = Imgproc.boundingRect(pipeline.findContoursOutput().get(0));
+                synchronized (imgLock) {
+                    centerX = r.x + (r.width / 2);
+                }
+            }
+        });
+        visionThread.start();
     }
 
     /**
@@ -104,6 +134,13 @@ public class Robot extends TimedRobot {
     public void autonomousPeriodic() {
 
         Scheduler.getInstance().run();
+
+        double centerX;
+        synchronized (imgLock) {
+            centerX = this.centerX;
+        }
+        double turn = centerX - (IMG_WIDTH / 2);
+        drivetrain.drive(0,0,turn*0.005);
 
     }
 

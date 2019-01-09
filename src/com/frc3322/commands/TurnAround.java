@@ -12,7 +12,7 @@ public class TurnAround extends Command {
 
         requires(drivetrain);
 
-        initAngle = drivetrain.navx.getYaw();
+
         targetAngle = initAngle + 360;
     }
 
@@ -23,6 +23,6 @@ public class TurnAround extends Command {
 
     @Override
     protected boolean isFinished() {
-        return Math.abs(targetAngle - drivetrain.navx.getAngle()) < 3 || isTimedOut();
+        return true;
     }
 }

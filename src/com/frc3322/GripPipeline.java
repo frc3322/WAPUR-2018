@@ -1,5 +1,6 @@
 package com.frc3322;
 
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -84,6 +85,7 @@ public class GripPipeline implements VisionPipeline {
 	public ArrayList<MatOfPoint> findContoursOutput() {
 		return findContoursOutput;
 	}
+
 
 
 	/**
